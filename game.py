@@ -26,11 +26,24 @@ def hb_checker(guess, answer):
 
     return hit, blow
 
+def game():
+    answer = number_generator()
+
+    for x in range(6):
+        print("Guess a number: ")
+        guess = input()
+        hit, blow = hb_checker(guess, answer)
+        print("Hit: " + str(hit))
+        print("Blow: " + str(blow))
+
+        if hit == 3:
+            print("Congrats you win!")
+            break
+        if x == 5 and hit < 3:
+            print("You Lose. The answer was " + answer)
+
 
 if __name__ == "__main__":
-    num = number_generator()
-    print(num)
-    h, b = hb_checker('123', num)
-    print("Hit: " + str(h))
-    print("Blow: " + str(b))
+    game()
+    
     
