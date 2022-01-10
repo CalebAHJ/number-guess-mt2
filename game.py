@@ -3,7 +3,7 @@ import random
 def number_generator():
     digits = list(range(10))
     
-    d1 = random.randint(0,9)
+    d1 = random.randint(1,9)
     digits.remove(d1)
     d2 = random.choice(digits)
     digits.remove(d2)
