@@ -30,7 +30,7 @@ def game():
     answer = number_generator()
 
     for x in range(6):
-        print("Guess a number: ")
+        print("Guess a number: (Guess No. " + str(x+1) + ")")
         guess = input()
         hit, blow = hb_checker(guess, answer)
         print("Hit: " + str(hit))
@@ -44,6 +44,14 @@ def game():
 
 
 if __name__ == "__main__":
-    game()
-    
-    
+    print("Welcome to Code Breaker!")
+    playing = True
+
+    while playing:
+        game()
+        print("Would you like to play again? (y/n)")
+        answer = input()
+        if answer.lower() == "n" or answer.lower() == "no":
+            playing = False
+
+    print("Thanks for playing!")
